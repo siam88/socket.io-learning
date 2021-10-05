@@ -17,6 +17,9 @@
     
     <script>
         let socket=io();
+        socket.on('message',(msg)=>{
+            document.write(msg)
+        })
     </script>
 </body>
 
