@@ -28,6 +28,8 @@ io.on('connection', (socket) => {
         console.log(msg)
     })
 
+    io.sockets.emit('mygroup',"whats up beautiful people" )
+
     socket.on('disconnect', () => {
         console.log("disconnected")
     })

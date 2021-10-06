@@ -12,41 +12,45 @@
     <input type="text" id="name"/>
     <button onClick="send()">Submit</button>
 
-
+    <h3 id="broadcasting"></h3>
 
 
     <script src="/socket.io/socket.io.js"></script>
     
     <script>
         let socket=io();
-        // socket.on('message',(msg)=>{
-        //     // document.write(msg)
-        //     document.getElementById('time').innerHTML="";
-
-        //     document.getElementById('time').innerHTML=msg;
-        // })
-
-
-        //custom event
-        // socket.on('customEvent',(msg)=>{
-           
-        //     document.getElementById('time').innerHTML="";
-
-        //     document.getElementById('time').innerHTML=msg;
-        // })
-
-
-        //sending data from client to server
-        // function send() {
-        //     socket.send(document.getElementById('name').value)
-        // }
-         //sending data from client to server using custom event
-         function send() {
-            socket.emit('sendMsg',document.getElementById('name').value)
-        }
+        socket.on('mygroup',(msg)=>{
+            document.getElementById('broadcasting').innerHTML=msg
+        })
     </script>
 </body>
 
 
 
 </html>
+<!-- 
+socket.on('message',(msg)=>{
+     document.write(msg)
+    document.getElementById('time').innerHTML="";
+
+    document.getElementById('time').innerHTML=msg;
+})
+
+
+custom event
+socket.on('customEvent',(msg)=>{
+   
+    document.getElementById('time').innerHTML="";
+
+    document.getElementById('time').innerHTML=msg;
+})
+
+
+sending data from client to server
+function send() {
+    socket.send(document.getElementById('name').value)
+}
+ sending data from client to server using custom event
+ function send() {
+    socket.emit('sendMsg',document.getElementById('name').value)
+} -->
