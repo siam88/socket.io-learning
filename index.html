@@ -9,7 +9,8 @@
 <body>
     <h1>hello bangladesh people</h1>
     <h2 id="time"> people</h2>
-
+    <input type="text" id="name"/>
+    <button onClick="send()">Submit</button>
 
 
 
@@ -27,12 +28,18 @@
 
 
         //custom event
-        socket.on('customEvent',(msg)=>{
+        // socket.on('customEvent',(msg)=>{
            
-            document.getElementById('time').innerHTML="";
+        //     document.getElementById('time').innerHTML="";
 
-            document.getElementById('time').innerHTML=msg;
-        })
+        //     document.getElementById('time').innerHTML=msg;
+        // })
+
+        
+        //sending data from client to server
+        function send() {
+            socket.send(document.getElementById('name').value)
+        }
     </script>
 </body>
 

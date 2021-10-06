@@ -19,11 +19,15 @@ io.on('connection', (socket) => {
     //     socket.send(time)
     // }, 10000)
 
-    setInterval(() => {
-        let date = new Date();
-        let time = date.getTime();
-        socket.emit('customEvent', time)
-    }, 1000)
+    // setInterval(() => {
+    //     let date = new Date();
+    //     let time = date.getTime();
+    //     socket.emit('customEvent', time)
+    // }, 1000)
+
+    socket.on('message',(msg)=>{
+        console.log(msg)
+    })
 
     socket.on('disconnect', () => {
         console.log("disconnected")
