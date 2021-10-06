@@ -35,10 +35,14 @@
         //     document.getElementById('time').innerHTML=msg;
         // })
 
-        
+
         //sending data from client to server
-        function send() {
-            socket.send(document.getElementById('name').value)
+        // function send() {
+        //     socket.send(document.getElementById('name').value)
+        // }
+         //sending data from client to server using custom event
+         function send() {
+            socket.emit('sendMsg',document.getElementById('name').value)
         }
     </script>
 </body>

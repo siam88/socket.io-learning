@@ -8,7 +8,6 @@ const { Server } = require('socket.io');
 const io = new Server(expressServer);
 
 io.on('connection', (socket) => {
-    console.log('connected');
     setTimeout(() => {
         socket.send(('hello socket learning'))
     }, 500)
@@ -25,7 +24,7 @@ io.on('connection', (socket) => {
     //     socket.emit('customEvent', time)
     // }, 1000)
 
-    socket.on('message',(msg)=>{
+    socket.on('sendMsg',(msg)=>{
         console.log(msg)
     })
 
