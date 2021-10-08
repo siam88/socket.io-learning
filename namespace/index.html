@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Namespace</title>
+</head>
+
+<body>
+    <h1>Hello Namespace learning</h1>
+    <p id="desc"></p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+          let socket=io("/buy");
+          socket.on('myCustomEvent',(msg)=>{
+              document.getElementById('desc').innerHTML=msg;
+          })
+    </script>
+</body>
+
+</html>
