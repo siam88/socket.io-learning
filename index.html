@@ -18,7 +18,7 @@
     <script src="/socket.io/socket.io.js"></script>
     
     <script>
-        let socket=io();
+        let socket=io('/sell');
         socket.on('mygroup',(msg)=>{
             document.getElementById('broadcasting').innerHTML=msg
         })
