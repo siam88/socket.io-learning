@@ -10,7 +10,7 @@ const io = new Server(expressServer);
 
 io.on('connection', (socket)=>{
    socket.on('chat', function(msg){
-       console.log(msg)
+       io.emit('chat_transfer',msg)
    })
 })
 
