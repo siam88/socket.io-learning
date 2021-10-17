@@ -3,12 +3,23 @@ const app=new express();
 const http = require('http');
 const expressServer=http.createServer(app);
 
+//SOCKET CONNECTION TO SERVER
+const { Server } = require('socket.io');
+const io = new Server(expressServer);
 
 
-app.get('/', (req, res)=>{
-    res.sendFile(__dirname +'/socket-combine-chat-app/index.html');
-} )
+io.on('connection', (socket)=>{
+    console.log("connection established")
+})
 
-expressServer.listen(3000,()=>{
-    console.log("server running @3000")
+
+
+//VIEW PAGE CALLED
+app.get('/', (req,res)=>{
+     res.sendFile(__dirname+'/index.html')
+})
+
+//LISTING PORT
+expressServer.listen(3000, ()=>{
+    console.log("connected to 3000...");
 })
