@@ -36,14 +36,18 @@
 
 
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="../socket.io/socket.io.js"></script>
     <script>
         let socket = io();
 
         function sendMsg() {
-            let msg=document.getElementById('msg').value;
-            alert(msg)
+            let msg = document.getElementById('msg').value;
+            socket.emit('chat',msg)
+           
         }
+
+
+        
     </script>
 </body>
 

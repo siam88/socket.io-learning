@@ -9,7 +9,9 @@ const io = new Server(expressServer);
 
 
 io.on('connection', (socket)=>{
-    console.log("connection established")
+   socket.on('chat', function(msg){
+       console.log(msg)
+   })
 })
 
 
