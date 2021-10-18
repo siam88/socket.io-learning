@@ -38,23 +38,31 @@
 
     <script src="../socket.io/socket.io.js"></script>
     <script>
+
+        //regular messaging
+        // let socket = io();
+
+        // function sendMsg() {
+        //     let msg = document.getElementById('msg').value;
+        //     socket.emit('chat',msg)
+        //     document.getElementById('msg').value=""
+        // }
+        // socket.on('chat_transfer',function(msg){
+        //     let listItem=document.createElement('li');
+        //     listItem.textContent = msg;
+
+        //     let msgHis=document.getElementById('msgHistory');
+        //     msgHis.appendChild(listItem);
+
+        // })
+
         let socket = io();
-
-        function sendMsg() {
-            let msg = document.getElementById('msg').value;
-            socket.emit('chat',msg)
-            document.getElementById('msg').value=""
-        }
-        socket.on('chat_transfer',function(msg){
-            let listItem=document.createElement('li');
-            listItem.textContent = msg;
-
-            let msgHis=document.getElementById('msgHistory');
-            msgHis.appendChild(listItem);
-
+        socket.on('cooking',function(data){
+            document.getElementById('msgHistory').innerHTML = data
         })
 
-        
+
+
     </script>
 </body>
 
